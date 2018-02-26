@@ -64,3 +64,18 @@
 // input 2 === output 2 + 1 === 2 + (output 1)
 // input 3 === output 3 + 2 + 1 === 3 + (output 2)
 // input 4 === output 4 + 3 + 2 + 1 === 4 + (output 3)
+
+
+//String Splitter
+function splitString(str, separator) {
+
+  console.log(str);
+  if (!str.includes(separator)) {
+    return [str];
+  }
+
+  return [str.slice(0, str.indexOf(separator)), ...splitString(str.slice(str.indexOf(separator) + separator.length), separator)];
+}
+
+console.log(splitString('whas up ma kitties what is good', ' '));
+
