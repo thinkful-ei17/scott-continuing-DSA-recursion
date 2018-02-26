@@ -106,14 +106,14 @@
 // 3 % 2 => 1
 // 4 % 2 => 0
 
-    // 6%2   6/2
-    //  0     3
-    //       3%2  3/2
-    //        1    1
-    //            1%2  1/2
-    //             1    0
+// 6%2   6/2
+//  0     3
+//       3%2  3/2
+//        1    1
+//            1%2  1/2
+//             1    0
 
-          //2^4 |      2^3 |    2^2 | 2^1 | 2^0
+//2^4 |      2^3 |    2^2 | 2^1 | 2^0
 // 16 |      8   |     4  |  2  |  1
 // 2*2*2*2 | 2*2*2 | 2*2  | 2 
 
@@ -125,6 +125,51 @@
 //input 25 === output 11001
 
 // to get 3 => 3%2 (1) 
-      //Math.floor(3/2) (1)
-              // 1 % 2 (1)
-                    // Math.floor(1/2) (0)
+//Math.floor(3/2) (1)
+// 1 % 2 (1)
+// Math.floor(1/2) (0)
+
+
+
+// function reverseString(string){
+//   if(string === ''){
+//     return '';
+//   }
+
+//   return reverseString(string.slice(1)) + string[0];
+// }
+
+// console.log(reverseString('german shepard'));
+
+
+// //Anagrams
+// function anagram(str) {
+//   if (str === '') {
+//     return '';
+//   }
+
+
+//   str[0] + anagram('tac')[...arr]
+// }
+
+// console.log(anagram('cat'));
+
+//Input: at
+//Output: at
+//        ta
+// ['tac', 'tca', 'cat', 'cta', 'atc', 'act'];
+// ['cats', 'cast', 'ctas', 'ctsa', 'csat', 'csta', 'tsca', 'tcas'..
+// ['stac', 'stca', 'scat', 'scta', 'satc', 'sact']]
+
+//Iterative version of anagram
+function anagrams(cats) {
+
+  for (let i = 0; i < cats.length; i++) {
+    let slice = cats.slice(0, i) + cats.slice(i + 1);
+    console.log(`${cats[i]} + ${slice}`);
+  }
+}
+
+anagrams('cats');
+
+ 
