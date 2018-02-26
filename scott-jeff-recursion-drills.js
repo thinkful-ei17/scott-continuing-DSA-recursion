@@ -67,15 +67,64 @@
 
 
 //String Splitter
-function splitString(str, separator) {
+// function splitString(str, separator) {
 
-  console.log(str);
-  if (!str.includes(separator)) {
-    return [str];
-  }
+//   console.log(str);
+//   if (!str.includes(separator)) {
+//     return [str];
+//   }
 
-  return [str.slice(0, str.indexOf(separator)), ...splitString(str.slice(str.indexOf(separator) + separator.length), separator)];
-}
+//   return [str.slice(0, str.indexOf(separator)), ...splitString(str.slice(str.indexOf(separator) + separator.length), separator)];
+// }
 
-console.log(splitString('whas up ma kitties what is good', ' '));
+// console.log(splitString('whas up ma kitties what is good', ' '));
 
+//Binary Representation
+
+// function toBinary(num){
+//   console.log('num:', num);
+  
+//   if (num === 1) {
+//     return 1;
+//   }
+//   if(num === 0){
+//     return 0;
+//   }
+//   return toBinary((Math.floor(num / 2))) + `${(num % 2)}`;
+// }
+
+// console.log(toBinary(5720));
+// console.log('input 0 === output 0',toBinary(0));
+// console.log('input 1 === output 1',toBinary(1));
+// console.log('input 2 === output 10',toBinary(2));
+// console.log('input 3 === output 11',toBinary(3));
+// console.log('input 6 === output 110',toBinary(6));
+// console.log('input 25 === output 11001',toBinary(25));
+
+// 1 % 2 => 1
+// 2 % 2 => 0
+// 3 % 2 => 1
+// 4 % 2 => 0
+
+    // 6%2   6/2
+    //  0     3
+    //       3%2  3/2
+    //        1    1
+    //            1%2  1/2
+    //             1    0
+
+          //2^4 |      2^3 |    2^2 | 2^1 | 2^0
+// 16 |      8   |     4  |  2  |  1
+// 2*2*2*2 | 2*2*2 | 2*2  | 2 
+
+//input 0 === output 0
+//input 1 === output 1
+//input 2 === output 10
+//input 3 === output 11
+//input 6 === output 110
+//input 25 === output 11001
+
+// to get 3 => 3%2 (1) 
+      //Math.floor(3/2) (1)
+              // 1 % 2 (1)
+                    // Math.floor(1/2) (0)
