@@ -39,16 +39,27 @@
 
 // console.log(reverseString('german shepard'));
 
-//nth Triangular Number
+//Reverse String Reversed
+// function reverseString(string){
+//   if(string === ''){
+//     return '';
+//   }
+//   return string[string.length-1] + reverseString(string.slice(0, string.length-1));
+// }
 
-function triangularNumber(num){
-  if (num === 1){
-    return 1;
-  }
-  return num + triangularNumber(num-1);
-}
+// console.log(reverseString('german shepard'));
 
-console.log(triangularNumber(5));
+
+// //nth Triangular Number
+
+// function triangularNumber(num){
+//   if (num === 1){
+//     return 1;
+//   }
+//   return num + triangularNumber(num-1);
+// }
+
+// console.log(triangularNumber(5));
 // input 1 === output 1
 // input 2 === output 2 + 1 === 2 + (output 1)
 // input 3 === output 3 + 2 + 1 === 3 + (output 2)
