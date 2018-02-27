@@ -1,7 +1,8 @@
 'use strict';
 
 
-//Counting Sheep
+//============Counting Sheep Recursive =============
+
 // function countSheep(sheep) {
 //   if (sheep === 0) {
 //     return;
@@ -11,10 +12,27 @@
 //   countSheep(sheep - 1);
 
 // }
+// countSheep(3);
+
+
+
+
+// ============= Counting Sheep Iterative ==========
+
+// function countSheep(sheep){
+//   for(let i = sheep; i > 0 ; i--){
+//     console.log(`${i} - Another sheep jumped over the fence`);
+//   }
+//   console.log(`All the sheep have left`);
+// }
 
 // countSheep(3);
 
-//Array Double
+
+
+
+//======== Array Double Recursive ============
+
 // function doubleArray(arr) {
 //   if (!arr.length) {
 //     return [];
@@ -27,7 +45,38 @@
 // let numArray = [1, 2, 3];
 // console.log(doubleArray(numArray));
 
-//Reverse String
+
+
+
+//========= Array Double Iterative without .map ==========
+
+// function doubleArray(arr){
+//   const doubles = [];
+//   for (let i = 0; i < arr.length; i++){
+//     doubles.push(arr[i] * 2);
+//   }
+//   return doubles;
+// }
+
+// let numArray = [1, 2, 3];
+// console.log(doubleArray(numArray));
+
+
+
+
+//=========== Array Double Iterative with map ==============
+
+// function doubledArray(arr){
+//   return arr.map(num => num * 2);
+// }
+
+// let numArray = [1, 2, 3];
+// console.log(doubleArray(numArray));
+
+
+
+
+//======= Reverse String Recursive ==============
 
 // function reverseString(string){
 //   if(string === ''){
@@ -39,7 +88,9 @@
 
 // console.log(reverseString('german shepard'));
 
-//Reverse String Reversed
+
+
+//======== Reverse String Recursive Reversed ===========
 // function reverseString(string){
 //   if(string === ''){
 //     return '';
@@ -50,7 +101,30 @@
 // console.log(reverseString('german shepard'));
 
 
-// //nth Triangular Number
+
+// Reverse String Iterative w/o reverse method ================
+
+// function reverseString(string){
+//   const reversed = [];
+//   for(let i = string.length - 1; i >= 0 ; i--){
+//     reversed.push(string[i]);
+//   }
+//   return reversed.join('');
+// }
+// console.log(reverseString('german shepard'));
+
+
+
+//============= Reverse String Iterative w/reverse method ========
+
+// function reverseString(string){
+//   return string.split('').reverse().join('');
+// }
+// console.log(reverseString('german shepard'));
+
+
+
+//=========== nth Triangular Number Recursive =================
 
 // function triangularNumber(num){
 //   if (num === 1){
@@ -60,13 +134,30 @@
 // }
 
 // console.log(triangularNumber(5));
+
 // input 1 === output 1
 // input 2 === output 2 + 1 === 2 + (output 1)
 // input 3 === output 3 + 2 + 1 === 3 + (output 2)
 // input 4 === output 4 + 3 + 2 + 1 === 4 + (output 3)
 
 
-//String Splitter
+//============== nth Triangular Number Iterative =======================
+
+// function triangularNumber(num){
+//   let sum = 0;
+//   for(let i = 0; i <= num; i++){
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(triangularNumber(5));
+
+
+
+//=============== String Splitter Recursive ====================
+
+
 // function splitString(str, separator) {
 
 //   console.log(str);
@@ -79,7 +170,10 @@
 
 // console.log(splitString('whas up ma kitties what is good', ' '));
 
-//Binary Representation
+
+
+
+//================= Binary Representation Recursive ========================
 
 // function toBinary(num){
 //   console.log('num:', num);
@@ -92,6 +186,7 @@
 //   }
 //   return toBinary((Math.floor(num / 2))) + `${(num % 2)}`;
 // }
+
 
 // console.log(toBinary(5720));
 // console.log('input 0 === output 0',toBinary(0));
@@ -130,17 +225,7 @@
 // Math.floor(1/2) (0)
 
 
-
-// function reverseString(string){
-//   if(string === ''){
-//     return '';
-//   }
-
-//   return reverseString(string.slice(1)) + string[0];
-// }
-
-// console.log(reverseString('german shepard'));
-
+//================== Anagrams A Mess and Not Finished ================================
 
 // //Anagrams
 // function anagram(str) {
@@ -162,14 +247,99 @@
 // ['stac', 'stca', 'scat', 'scta', 'satc', 'sact']]
 
 //Iterative version of anagram
-function anagrams(cats) {
+
+function anagrams(cats, i=0) {
+  if(i === cats.length-1){
+    return; 
+  }
 
   for (let i = 0; i < cats.length; i++) {
     let slice = cats.slice(0, i) + cats.slice(i + 1);
-    console.log(`${cats[i]} + ${slice}`);
+    console.log(`${cats[i]}${slice}`);
   }
+  i++;
+  return anagrams((cats.slice(1) + cats[0]), i);
 }
 
-anagrams('cats');
+anagrams('cat');
 
- 
+// function getAllPermutations(string)
+// define results
+// if string is a single character
+// add the character to results
+// return results
+// for each char in string
+//   define innerPermutations as a char of string
+// set innerPermutations to getAllPermutations(without next char)
+// foreach string in innerPermutations
+// add defined char and innerPermutations char
+// return results
+
+
+// function anagrams(string){
+    
+
+// }
+
+// function one(string){
+//   const firstLetter = string[0];
+//   const rest = string.slice(1).split('');
+//   for(let i = 0; i < rest.length; i++){
+//     const end = rest.pop();
+//     rest.unshift(end);
+//     console.log([firstLetter,...rest].join(''));
+//   }
+
+// }
+
+// function anagram(string){
+//   const letterArray = string.split('');
+//   for(let i=0; i < string.length; i++){
+//     const first = string.slice(0, i);
+//     const second = string.slice(i + 1);
+//     const third = string[i];
+//     one(first + second + third);
+//   }
+  
+
+// }
+
+// one('cat');
+
+
+// Cory Mickelson	7: 03 PM
+
+// function getAllPermutations(string)
+// define results
+// if string is a single character
+// add the character to results
+// return results
+// for each char in string
+//   define innerPermutations as a char of string
+// set innerPermutations to getAllPermutations(without next char)
+// foreach string in innerPermutations
+// add defined char and innerPermutations char
+// return results
+
+// c + anagrams(ats); => string[0] + anagrams(string.slice(1))
+// a + anagrams(st); => string[0] + anagrams(string.slice(1))
+// t + anagrams(s); => string[0] + anagrams(string.slice(1))
+// s + ''; => string[0] + anagrams('')
+
+// console.log(string[0]);
+// let slice = string.slice(0) + cats.slice(i + 1);
+// console.log(`${cats[i]} + ${slice}`);
+// return 
+
+
+// ltr => string.slice(0, string.indexOf(ltr))
+  
+  
+
+   
+
+
+
+// anagrams('cat');
+
+//cat cta atc act tca tac
