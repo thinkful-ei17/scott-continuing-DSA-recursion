@@ -248,20 +248,27 @@
 
 //Iterative version of anagram
 
-function anagrams(cats, i=0) {
-  if(i === cats.length-1){
-    return; 
+function anagrams(cats) {
+  if(cats.length === 1){
+    return [cats[0]]; 
   }
-
+  
+  let anas = [];
   for (let i = 0; i < cats.length; i++) {
-    let slice = cats.slice(0, i) + cats.slice(i + 1);
-    console.log(`${cats[i]}${slice}`);
+    const stringNoI = cats.slice(0, i) + cats.slice(i + 1);
+    const anagramsArrayNoI = anagrams(stringNoI);
+    anas = [...anas, ...anagramsArrayNoI.map(a => cats[i] + a)];
   }
-  i++;
-  return anagrams((cats.slice(1) + cats[0]), i);
+  return anas;
 }
 
-anagrams('cat');
+console.log(anagrams('taco'));
+
+// c + anagrams(ats); => string[0] + anagrams(string.slice(1))
+// a + anagrams(st); => string[0] + anagrams(string.slice(1))
+// t + anagrams(s); => string[0] + anagrams(string.slice(1))
+// s + ''; => string[0] + anagrams('')
+
 
 // function getAllPermutations(string)
 // define results
@@ -321,10 +328,6 @@ anagrams('cat');
 // add defined char and innerPermutations char
 // return results
 
-// c + anagrams(ats); => string[0] + anagrams(string.slice(1))
-// a + anagrams(st); => string[0] + anagrams(string.slice(1))
-// t + anagrams(s); => string[0] + anagrams(string.slice(1))
-// s + ''; => string[0] + anagrams('')
 
 // console.log(string[0]);
 // let slice = string.slice(0) + cats.slice(i + 1);
@@ -344,7 +347,7 @@ anagrams('cat');
 
 //cat cta atc act tca tac
 
-//======= Factorial Recursive =================
+//=============== Factorial Recursive =================
 
 // function calcFactorial(num){
 //   if(num === 1){
