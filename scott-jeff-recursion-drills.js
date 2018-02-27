@@ -270,50 +270,6 @@ console.log(anagrams('taco'));
 // s + ''; => string[0] + anagrams('')
 
 
-// function getAllPermutations(string)
-// define results
-// if string is a single character
-// add the character to results
-// return results
-// for each char in string
-//   define innerPermutations as a char of string
-// set innerPermutations to getAllPermutations(without next char)
-// foreach string in innerPermutations
-// add defined char and innerPermutations char
-// return results
-
-
-// function anagrams(string){
-    
-
-// }
-
-// function one(string){
-//   const firstLetter = string[0];
-//   const rest = string.slice(1).split('');
-//   for(let i = 0; i < rest.length; i++){
-//     const end = rest.pop();
-//     rest.unshift(end);
-//     console.log([firstLetter,...rest].join(''));
-//   }
-
-// }
-
-// function anagram(string){
-//   const letterArray = string.split('');
-//   for(let i=0; i < string.length; i++){
-//     const first = string.slice(0, i);
-//     const second = string.slice(i + 1);
-//     const third = string[i];
-//     one(first + second + third);
-//   }
-  
-
-// }
-
-// one('cat');
-
-
 // Cory Mickelson	7: 03 PM
 
 // function getAllPermutations(string)
@@ -334,18 +290,10 @@ console.log(anagrams('taco'));
 // console.log(`${cats[i]} + ${slice}`);
 // return 
 
-
-// ltr => string.slice(0, string.indexOf(ltr))
   
   
 
    
-
-
-
-// anagrams('cat');
-
-//cat cta atc act tca tac
 
 //=============== Factorial Recursive =================
 
